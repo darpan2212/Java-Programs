@@ -1,0 +1,2 @@
+hello i m darpan, this is java code for depart words 
+into a list.

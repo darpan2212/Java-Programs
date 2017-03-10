@@ -1,0 +1,33 @@
+package org.harmonic;
+
+import java.util.Scanner;
+
+public class HarmonicNumber {
+	public HarmonicNumber() {
+	}
+
+	public static double calculateHarmonic(int N) {
+		double sum = 0.0D;
+		for (int i = 1; i <= N; i++) {
+			sum += 1.0D / i;
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+
+		if (scn.hasNextInt()) {
+			int N = scn.nextInt();
+			if (N > 0) {
+				System.out.println(N + "th harmonic number is " + calculateHarmonic(N));
+			} else {
+				System.err.println("Harmonic number is not possible");
+			}
+		} else {
+			System.err.println("Enter only +ve integer value");
+		}
+
+		scn.close();
+	}
+}
