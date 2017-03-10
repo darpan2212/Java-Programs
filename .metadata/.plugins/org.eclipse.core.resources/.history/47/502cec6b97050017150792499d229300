@@ -8,9 +8,9 @@ public class FindWord {
 	public static boolean search(String str, List<String> l) {
 		int i = 0;
 		while (i < l.size()) {
+			i++;
 			if (str.equals(l.get(i)))
 				return true;
-			i++;
 		}
 		return false;
 	}
