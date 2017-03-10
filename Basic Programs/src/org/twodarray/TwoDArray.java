@@ -3,8 +3,6 @@ package org.twodarray;
 import java.util.Scanner;
 
 public class TwoDArray {
-	public TwoDArray() {
-	}
 
 	public static void main(String[] args) {
 		System.out.println("Enter the numbers of row");

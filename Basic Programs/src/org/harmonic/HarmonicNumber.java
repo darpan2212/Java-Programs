@@ -3,9 +3,7 @@ package org.harmonic;
 import java.util.Scanner;
 
 public class HarmonicNumber {
-	public HarmonicNumber() {
-	}
-
+	
 	public static double calculateHarmonic(int N) {
 		double sum = 0.0D;
 		for (int i = 1; i <= N; i++) {

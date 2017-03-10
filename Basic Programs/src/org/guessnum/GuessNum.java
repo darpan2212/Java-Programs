@@ -3,8 +3,6 @@ package org.guessnum;
 import java.util.Scanner;
 
 public class GuessNum {
-	public GuessNum() {
-	}
 
 	public static int search(int lo, int hi) {
 		Scanner scn = new Scanner(System.in);

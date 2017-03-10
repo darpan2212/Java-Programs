@@ -1,8 +1,6 @@
 package org.powerof2;
 
 public class PowerOf2 {
-	public PowerOf2() {
-	}
 
 	public static int pow(int base, int power) {
 		int temp = base;

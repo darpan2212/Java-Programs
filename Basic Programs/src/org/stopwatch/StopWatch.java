@@ -3,8 +3,6 @@ package org.stopwatch;
 import java.util.Scanner;
 
 public class StopWatch {
-	public StopWatch() {
-	}
 
 	private static double startTime = 0.0D;
 	private static double stopTime = 0.0D;

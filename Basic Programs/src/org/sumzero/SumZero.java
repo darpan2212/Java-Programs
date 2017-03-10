@@ -1,8 +1,6 @@
 package org.sumzero;
 
 public class SumZero {
-	public SumZero() {
-	}
 
 	public static void printAll(int[] a) {
 		int N = a.length;

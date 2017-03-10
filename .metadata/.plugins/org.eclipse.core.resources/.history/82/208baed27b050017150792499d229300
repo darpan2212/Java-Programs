@@ -1,0 +1,38 @@
+package org.sort;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+public class InsertionSortString {
+
+	public static List<String> strList = new ArrayList<String>();
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+
+		do {
+			System.out.println("Enter your string which you want to add in list....");
+			String s = scn.nextLine();
+			strList.add(s);
+			System.out.println("do you want to add another string");
+
+			if (!scn.nextLine().equals("y")) {
+				break;
+			}
+		} while (true);
+
+		Iterator<String> i = strList.iterator();
+		
+		for (String string : strList) {
+			System.out.println(string.compareTo(i.next()));
+		}
+		
+		
+		
+		scn.close();
+	}
+
+}

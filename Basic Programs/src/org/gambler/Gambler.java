@@ -1,8 +1,6 @@
 package org.gambler;
 
 public class Gambler {
-	public Gambler() {
-	}
 
 	public static double countPerc(double get, double total) {
 		return get / total * 100.0D;

@@ -19,9 +19,6 @@ public class TicTacToe {
 	public static int currentCol;
 	public static java.util.Scanner in = new java.util.Scanner(System.in);
 
-	public TicTacToe() {
-	}
-
 	public static void printBoard() {
 		for (int row = 0; row < 3; row++) {
 			for (int col = 0; col < 3; col++) {

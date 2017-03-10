@@ -3,8 +3,6 @@ package org.username;
 import java.util.Scanner;
 
 public class UserName {
-	public UserName() {
-	}
 
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);

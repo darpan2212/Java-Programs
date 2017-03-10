@@ -1,0 +1,5 @@
+package org.sort;
+
+public class InsertionSortString {
+
+}

@@ -10,9 +10,6 @@ class Stock {
 	private String shareName;
 	private double sharePrice;
 
-	Stock() {
-	}
-
 	public int getIndex() {
 		return index;
 	}
@@ -48,9 +45,6 @@ class Stock {
 
 public class StockReport {
 	public static List<Stock> stockList = new ArrayList<Stock>();
-
-	public StockReport() {
-	}
 
 	public static void main(String[] args) {
 		System.out.println("How many stocks do you have?");

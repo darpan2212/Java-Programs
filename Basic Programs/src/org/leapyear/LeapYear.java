@@ -3,8 +3,6 @@ package org.leapyear;
 import java.util.Scanner;
 
 public class LeapYear {
-	public LeapYear() {
-	}
 
 	public static int countDigit(int num) {
 		int cnt = 0;
