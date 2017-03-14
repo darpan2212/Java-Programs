@@ -1,0 +1,43 @@
+package org.ordered.list;
+
+import java.util.Comparator;
+
+public class SortedLinkedList<E> implements Comparator<Node>{
+
+	private class Node<T>{
+		T value;
+		Node<T> next;
+		public T getValue() {
+			return value;
+		}
+		public void setValue(T value) {
+			this.value = value;
+		}
+		public Node<T> getNext() {
+			return next;
+		}
+		public void setNext(Node<T> next) {
+			this.next = next;
+		}
+	}
+	
+	private Node<E> head = null;
+	private Node<E> tail = null;
+	
+	public void add(E e){
+		Node<E> nd = new Node<E>();
+		nd.setValue(e);
+		
+		if(head == null){
+			head = nd;
+			tail = nd;
+		}
+	}
+
+	@Override
+	public int compare(Node o1, Node o2) {
+		
+		return 0;
+	}
+	
+}

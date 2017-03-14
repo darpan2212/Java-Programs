@@ -1,0 +1,10 @@
+package org.ordered.list;
+
+public class SortedLinkedList<E> {
+
+	private class Node<T>{
+		T value;
+		Node<T> next;
+	}
+	
+}

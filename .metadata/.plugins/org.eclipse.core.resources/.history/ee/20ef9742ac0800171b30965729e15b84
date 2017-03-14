@@ -1,0 +1,47 @@
+package org.ordered.list;
+
+
+public class SortedLinkedList<E>{
+
+	private class Node<T> implements Comparable<T>{
+		T value;
+		Node<T> next;
+		public T getValue() {
+			return value;
+		}
+		public void setValue(T value) {
+			this.value = value;
+		}
+		public Node<T> getNext() {
+			return next;
+		}
+		public void setNext(Node<T> next) {
+			this.next = next;
+		}
+		@Override
+		public int compareTo(T o) {
+			return o.toString().compareTo(this.getValue().toString());
+		}
+	}
+	
+	private Node<E> head = null;
+	private Node<E> tail = null;
+	
+	public void add(E e){
+		Node<E> nd = new Node<E>();
+		nd.setValue(e);
+		
+		if(head == null){
+			head = nd;
+			tail = nd;
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+
+		SortedLinkedList<String> sss= new SortedLinkedList<String>();
+		
+	}
+
+}

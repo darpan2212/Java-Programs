@@ -1,0 +1,30 @@
+package org.unordered.list;
+
+public class List<T> {
+
+	public List(){
+		
+	}
+	
+	class Node<V>{
+		private V value;
+		private Node<V> next;
+		public V getValue() {
+			return value;
+		}
+		public void setValue(V value) {
+			this.value = value;
+		}
+		public Node<V> getNext() {
+			return next;
+		}
+		public void setNext(Node<V> next) {
+			this.next = next;
+		}
+	}
+
+	private Node head = null;
+	private Node tail = null;
+	
+	
+}

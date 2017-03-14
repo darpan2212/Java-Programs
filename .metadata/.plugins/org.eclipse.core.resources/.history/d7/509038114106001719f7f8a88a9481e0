@@ -1,0 +1,143 @@
+package org.utility;
+
+import org.stopwatch.StopWatch;
+
+public class Utility {
+
+	public int binarySearchInt(int[] a, int ele) {
+
+		System.out.println("This method would work only on sorted list.....");
+		int min = 0, max = (a.length - 1);
+		while (max >= min) {
+			int guess = (min + max) / 2;
+
+			if (ele == a[guess]) {
+				return guess;
+			} else if (a[guess] < ele) {
+				min = guess + 1;
+			} else {
+				max = guess - 1;
+			}
+		}
+		return -1;
+	}
+
+	public int binarySearchStr(String[] a, String ele) {
+		System.out.println("This method would work only on sorted list.....");
+		int min = 0, max = (a.length);
+		while (max >= min) {
+			int guess = (min + max) / 2;
+
+			if (ele.equals(a[guess])) {
+				return guess;
+			} else if (a[guess].compareTo(ele) < 0) {
+				min = guess + 1;
+			} else {
+				max = guess - 1;
+			}
+		}
+		return -1;
+	}
+
+	public void insertionSortInt(int[] a) {
+		for (int i = 1; i < a.length; i++) {
+			int index = a[i];
+			int j = i - 1;
+			while (j >= 0 && a[j] > index) {
+				a[j + 1] = a[j];
+				j--;
+			}
+			a[j + 1] = index;
+		}
+	}
+
+	public void insertionSortStr(String[] a) {
+		for (int i = 1; i < a.length; i++) {
+			String index = a[i];
+			int j = i - 1;
+			while (j >= 0 && (a[j].compareTo(index)) > 0) {
+				a[j + 1] = a[j];
+				j--;
+			}
+			a[j + 1] = index;
+		}
+	}
+
+	public void bubbleSortInt(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i + 1; j < a.length; j++) {
+				if (a[j] < a[i]) {
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+	}
+
+	public void bubbleSortStr(String[] a) {
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i + 1; j < a.length; j++) {
+				if (a[j].compareTo(a[i]) < 0) {
+					String temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+
+		StopWatch st = new StopWatch();
+		
+		Utility ut = new Utility();
+		int[] arr = { 7, 11, 13, 17, 19, 23, 29 };
+		st.start();
+		int flag = ut.binarySearchInt(arr, 19);
+		st.stop();
+		if(flag>=0)
+			System.out.println("your search element at position : "+flag);
+		else
+			System.out.println("your search element is not there......");
+		System.out.println("Elapsed time for binarysearch int : "+st.getElapsedTimeSecs());
+		String[] str = { "a", "b", "ca", "cb", "da", "dd" };
+		
+		
+		flag= ut.binarySearchStr(str, "cc");
+
+		if(flag>=0)
+			System.out.println("your search element at position : "+flag);
+		else
+			System.out.println("your search element is not there......");
+		System.out.println("Elapsed time for binarysearch int : "+st.getElapsedTimeSecs());
+		
+		
+		int[] a = { 5, 6, 9, 7, 3, 11, 10 };
+
+		ut.bubbleSortInt(a);
+		for (int i : a) {
+			System.out.println(i);
+		}
+
+		String[] as = { "cd", "fd", "abc", "op", "po", "bc" };
+		ut.bubbleSortStr(as);
+		for (String string : as) {
+			System.out.println(string);
+		}
+
+		int[] intArr = { 5, 6, 9, 7, 3, 11, 10 };
+
+		ut.bubbleSortInt(intArr);
+		for (int i : intArr) {
+			System.out.println(i);
+		}
+
+		String[] strArr = { "cd", "fd", "abc", "op", "po", "bc" };
+		ut.bubbleSortStr(strArr);
+		for (String string : strArr) {
+			System.out.println(string);
+		}
+
+	}
+}

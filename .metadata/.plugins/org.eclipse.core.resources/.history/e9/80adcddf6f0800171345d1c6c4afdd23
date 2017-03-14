@@ -1,0 +1,23 @@
+package org.unordered.list;
+
+public class LinkedList {
+
+	public static void main(String[] args) {
+		
+		List<Integer> li = new List<Integer>();
+		li.add(1);
+		li.add(5);
+		li.add(3);
+		li.add(5);
+		li.add(5);
+		li.add(3);
+		
+		
+		li.insert(6, 2);
+		System.out.println(li.index(3)+"\n");
+		li.remove(3);
+		li.pop();
+		li.traverse();
+	}
+	
+}

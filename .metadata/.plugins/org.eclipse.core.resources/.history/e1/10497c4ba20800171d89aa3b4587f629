@@ -1,0 +1,62 @@
+package org.unordered.list;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Scanner;
+
+public class FindWordInFile {
+
+	public static LinkedList<String> str = new LinkedList<String>();
+
+	public static void main(String[] args) {
+
+		File in = new File("/home/bridgeit/Desktop/Darpan" + "/Eclipse Workspace/Basic Programs/Basic Programs"
+				+ "/src/org/unordered/list/input.txt");
+		File out = new File("/home/bridgeit/Desktop/Darpan" + "/Eclipse Workspace/Basic Programs/Basic Programs"
+				+ "/src/org/unordered/list/output.txt");
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+		Scanner scn = new Scanner(System.in);
+		try {
+			if (in.exists() && in.canRead()) {
+				br = new BufferedReader(new InputStreamReader(new FileInputStream(in)));
+				String line;
+				line = br.readLine();
+				while (line != null) {
+					for (String word : line.split(" ")) {
+						str.add(word.toLowerCase());
+					}
+					line = br.readLine();
+				}
+			}
+			System.out.println("What word do you want to find in the File (use only small letters) :");
+			String search = scn.nextLine();
+
+			bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out)));
+			fw = new FileWriter(out);
+
+			/*for (int i = 0; i < str.size(); i++) {
+				fw.write(str.popPos(i) + "\n");
+				fw.flush();
+			}*/
+			System.out.println("size--------"+str.size());
+			str.traverse();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			scn.close();
+		}
+	}
+
+}

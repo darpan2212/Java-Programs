@@ -1,0 +1,5 @@
+package org.ordered.list;
+
+public class SortedLinkedList {
+
+}

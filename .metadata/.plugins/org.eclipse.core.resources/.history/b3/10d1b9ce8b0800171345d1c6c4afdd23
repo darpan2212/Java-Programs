@@ -1,0 +1,9 @@
+package org.unordered.list;
+
+public class LinkedListTest {
+
+	public static void main(String[] args) {
+		FindWordInFile.str.traverse();
+	}
+	
+}

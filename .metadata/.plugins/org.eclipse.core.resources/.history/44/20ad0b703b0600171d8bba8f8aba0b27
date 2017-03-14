@@ -1,0 +1,30 @@
+package org.utility;
+
+public class Utility {
+
+	public void insertionSortInt(int[] a){
+		for (int i = 1; i < a.length; i++) {
+			int index = a[i];
+			int j = i-1;
+			while(j>=0 && a[j]>index){
+				a[j+1] = a[j];
+				j--;
+			}
+			a[j+1] = index;
+		}
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Utility u = new Utility();
+		int[] a = {5,9,4,6,7,2};
+		
+		u.insertionSortInt(a);
+		for (int i : a) {
+			System.out.println(i);
+		}
+	}
+	
+}

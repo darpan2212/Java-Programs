@@ -1,0 +1,74 @@
+package org.unordered.list;
+
+import java.util.Comparator;
+
+public class List<T> implements Comparator<T>{
+
+	private class Node {
+		private T value;
+		private Node next;
+
+		public T getValue() {
+			return value;
+		}
+
+		public void setValue(T value) {
+			this.value = value;
+		}
+
+		public Node getNext() {
+			return next;
+		}
+
+		public void setNext(Node next) {
+			this.next = next;
+		}
+	}
+
+	private Node head = null;
+	private Node tail = null;
+
+	public boolean add(T e) {
+		try {
+			Node nd = new Node();
+			nd.setValue(e);
+			if (head == null) {
+				head = nd;
+				tail = nd;
+			} else {
+				Node temp = head;
+				while (temp.getNext() != null) {
+					temp = temp.getNext();
+				}
+				temp.setNext(nd);
+				tail = nd;
+			}
+			return true;
+		} catch (Exception ex) {
+			return false;
+		}
+	}
+
+	public boolean remove(T e) {
+		try{
+			
+			return true;
+		}catch(Exception ex){
+			return false;
+		}
+	}
+
+	public void traverse() {
+		Node temp = head;
+		while (temp != null) {
+			System.out.println(temp.getValue());
+			temp = temp.getNext();
+		}
+	}
+
+	@Override
+	public int compare(T o1, T o2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}
