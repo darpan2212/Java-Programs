@@ -1,0 +1,52 @@
+package org.queue.banking;
+
+import java.util.Arrays;
+
+public class Queue {
+
+	public Queue() {
+
+	}
+
+	private static Object[] obj = new Object[5];
+	private int front = -1, rear = -1, size = 0;
+
+	public void enqueue(Object o) {
+		if (isFull()) {
+			System.err.println("Queue is full");
+		} else {
+			if(rear == obj.length-1)
+				rear = -1;
+			obj[++rear] = o;
+			size++;
+		}
+	}
+
+	public Object dequeue() {
+		if (isEmpty()) {
+			System.err.println("Queue is at underflow situation");
+		} else{
+			if(front == obj.length-1)
+				front=-1;
+			size--;
+		}
+
+		return obj[++front];
+	}
+
+	public int size() {
+		return size;
+	}
+
+	private void increaseArrSize() {
+		obj = Arrays.copyOf(obj, obj.length * 2);
+	}
+
+	public boolean isEmpty() {
+		return (size == 0);
+	}
+
+	public boolean isFull() {
+		return (rear == obj.length - 1 && front == -1);
+	}
+}

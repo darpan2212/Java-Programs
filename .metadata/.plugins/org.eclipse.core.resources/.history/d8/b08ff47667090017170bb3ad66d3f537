@@ -1,0 +1,31 @@
+package org.queue.banking;
+
+import java.util.Arrays;
+
+public class Queue {
+
+	public Queue(){
+		
+	}
+	private Object[] obj = new Object[5];
+	private int front=-1, rear=-1,size=0;
+	
+	public void enqueue(Object o){
+		if(isFull()){
+			increaseArrSize();
+			obj[++rear] = o;
+		}
+	}
+	
+	private void increaseArrSize(){
+		obj = Arrays.copyOf(obj, obj.length*2);
+	}
+	
+	public boolean isEmpty(){
+		return (rear == -1 || rear == front );
+	}
+	
+	public boolean isFull(){
+		return (rear == obj.length-1);
+	}
+}

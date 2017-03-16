@@ -1,0 +1,15 @@
+package org.ordered.list;
+
+public class ListIndexOutOfBound extends Exception {
+
+	public ListIndexOutOfBound(int pos) {
+		System.err.println("-------List index [" + pos + "] you passed is out of bound-------");
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+	
+}

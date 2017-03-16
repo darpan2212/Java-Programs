@@ -1,0 +1,9 @@
+package org.queue.banking;
+
+public class Queue {
+
+	public Queue(){
+		
+	}
+	
+}

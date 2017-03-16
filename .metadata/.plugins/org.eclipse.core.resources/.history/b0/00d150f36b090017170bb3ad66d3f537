@@ -1,0 +1,33 @@
+package org.queue.banking;
+
+public class QueueTest {
+
+	public static Queue q = new Queue();
+	
+	public static void main(String[] args) {
+		
+		q.enqueue(54565);
+		q.enqueue("asdasd");
+		q.enqueue(12.64);
+		q.enqueue(565161151.13521151);
+		double d = 45646416565165.5213514;
+		q.enqueue(d);
+		
+		
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		/*System.out.println("size------------------"+q.size());
+		
+		System.out.println(q.dequeue());
+		
+		System.out.println("after dequeue size------------------"+q.size());
+		q.enqueue('a');
+		System.out.println("again enqueue size------------------"+q.size());
+		System.out.println(q.dequeue());
+		System.out.println("after dequeue size------------------"+q.size());*/
+	}
+	
+}

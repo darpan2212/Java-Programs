@@ -2,16 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Node&lt;T&gt;" key="selection"/>
+		<item value="rq" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="q"/>
+			<item value="compareTo"/>
 			<item value="Node"/>
 			<item value="getElapsedTimeSecs"/>
 		</list>
 		<list key="replacehistory">
+			<item value="rq"/>
 			<item value="Node&lt;T&gt;"/>
 			<item value="getElapsedTime"/>
 		</list>

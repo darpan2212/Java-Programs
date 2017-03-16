@@ -1,0 +1,11 @@
+package org.queue.banking;
+
+public class Queue {
+
+	public Queue(){
+		
+	}
+	private Object[] obj = new Object[5];
+	private int front=-1, rear=-1;
+	
+}

@@ -1,0 +1,94 @@
+package org.ordered.list;
+
+public class SortedLinkedList<E> {
+
+	private class Node<T> implements Comparable<T> {
+		T value;
+		Node<T> next;
+
+		public T getValue() {
+			return value;
+		}
+
+		public void setValue(T value) {
+			this.value = value;
+		}
+
+		public Node<T> getNext() {
+			return next;
+		}
+
+		public void setNext(Node<T> next) {
+			this.next = next;
+		}
+
+		@Override
+		public int compareTo(T o) {
+			return (int) o - (int) this.getValue();
+		}
+	}
+
+	private Node<E> head = null;
+	private Node<E> tail = null;
+	private int size = 0;
+
+	public void add(E e) {
+		Node<E> nd = new Node<E>();
+		nd.setValue(e);
+		if (head == null) {
+			head = nd;
+			tail = nd;
+			size++;
+		} else {
+			if (head.compareTo(e) < 0) {
+				nd.setNext(head);
+				head = nd;
+				size++;
+			} else {
+				Node<E> tmp = head;
+				while (tmp != null) {
+					if (tmp.getNext() == null && tmp.compareTo(e) > 0) {
+						tmp.setNext(nd);
+						tail = nd;
+						size++;
+						break;
+					} else if ((tmp.compareTo(e) >= 0) && (tmp.getNext().compareTo(e) < 0)) {
+						nd.setNext(tmp.getNext());
+						tmp.setNext(nd);
+						size++;
+						break;
+					}
+					tmp = tmp.getNext();
+				}
+			}
+		}
+	}
+
+	public int size() {
+		return size;
+	}
+
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	public E get(int pos) throws ListIndexOutOfBound {
+		Node<E> tmp = head;
+		if(pos > (size-1))
+			throw new ListIndexOutOfBound(pos);
+		
+		while (tmp != null && pos > 0) {
+			tmp = tmp.getNext();
+			pos--;
+		}
+		return tmp.getValue();
+	}
+
+	public void traverse() {
+		Node<E> tmp = head;
+		while (tmp != null) {
+			System.out.println(tmp.getValue());
+			tmp = tmp.getNext();
+		}
+	}
+}

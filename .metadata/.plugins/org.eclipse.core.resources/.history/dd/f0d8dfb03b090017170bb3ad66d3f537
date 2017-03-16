@@ -1,0 +1,153 @@
+package org.ordered.list;
+
+import org.unordered.list.Node;
+
+public class SortedLinkedList<E> {
+
+	private class Node<T> implements Comparable<T> {
+		T value;
+		Node<T> next;
+
+		public T getValue() {
+			return value;
+		}
+
+		public void setValue(T value) {
+			this.value = value;
+		}
+
+		public Node<T> getNext() {
+			return next;
+		}
+
+		public void setNext(Node<T> next) {
+			this.next = next;
+		}
+
+		@Override
+		public int compareTo(T o) {
+			return (int) o - (int) this.getValue();
+		}
+	}
+
+	private Node<E> head = null;
+	private Node<E> tail = null;
+	private int size = 0;
+
+	public void add(E e) {
+		Node<E> nd = new Node<E>();
+		nd.setValue(e);
+		if (head == null) {
+			head = nd;
+			tail = nd;
+			size++;
+		} else {
+			if (head.compareTo(e) < 0) {
+				nd.setNext(head);
+				head = nd;
+				size++;
+			} else {
+				Node<E> tmp = head;
+				while (tmp != null) {
+					if (tmp.getNext() == null && tmp.compareTo(e) > 0) {
+						tmp.setNext(nd);
+						tail = nd;
+						size++;
+						break;
+					} else if ((tmp.compareTo(e) >= 0) && (tmp.getNext().compareTo(e) < 0)) {
+						nd.setNext(tmp.getNext());
+						tmp.setNext(nd);
+						size++;
+						break;
+					}
+					tmp = tmp.getNext();
+				}
+			}
+		}
+	}
+
+	public int size() {
+		return size;
+	}
+
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	public E get(int pos) {
+		Node<E> tmp = head;
+		if(pos > (size-1))
+			return null;
+		
+		while (tmp != null && pos > 0) {
+			tmp = tmp.getNext();
+			pos--;
+		}
+		return tmp.getValue();
+	}
+
+	public void remove(E e){
+		Node<E> temp = head;
+		Node<E> ref = head;
+		if (head.compareTo(e) == 0) {
+			head = temp.getNext();
+			size--;
+		} else {
+			while (temp != null) {
+				if (temp.compareTo(e) == 0) {
+					ref.setNext(temp.getNext());
+					size--;
+					break;
+				}
+				ref = temp;
+				temp = temp.getNext();
+			}
+		}
+	}
+	
+	public boolean search(E e) {
+		Node<E> temp = head;
+		while (temp != null) {
+			if (temp.compareTo(e) == 0) {
+				return true;
+			}
+			temp = temp.getNext();
+		}
+		return false;
+	}
+	
+	public int index(E e) {
+		int cnt = 0;
+		Node<E> temp = head;
+		while (temp != null) {
+			if (temp.compareTo(e) == 0) {
+				return cnt;
+			}
+			cnt++;
+			temp = temp.getNext();
+		}
+		return -1;
+	}
+	
+	public T pop() {
+		Node<T> temp = head;
+		Node<T> ref = head;
+		while (temp.getNext() != null) {
+			ref = temp;
+			temp = temp.getNext();
+		}
+		temp = tail;
+		tail = ref;
+		ref.setNext(null);
+		size--;
+		return temp.getValue();
+	}
+	
+	public void traverse() {
+		Node<E> tmp = head;
+		while (tmp != null) {
+			System.out.println(tmp.getValue());
+			tmp = tmp.getNext();
+		}
+	}
+}

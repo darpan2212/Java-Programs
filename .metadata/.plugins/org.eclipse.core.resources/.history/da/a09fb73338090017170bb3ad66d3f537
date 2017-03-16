@@ -1,0 +1,9 @@
+package org.unordered.list;
+
+public class ArrayIndexOutOfBound extends Exception {
+
+	public ArrayIndexOutOfBound(int pos) {
+		System.err.println("");
+	}
+	
+}

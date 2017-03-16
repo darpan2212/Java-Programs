@@ -1,0 +1,16 @@
+package org.queue.banking;
+
+public class QueueTest {
+
+	public static Queue q = new Queue();
+	
+	public static void main(String[] args) {
+		
+		q.enqueue(54565);
+		q.enqueue("asdasd");
+		q.enqueue(12.64);
+		q.enqueue(6565161151);
+		
+	}
+	
+}

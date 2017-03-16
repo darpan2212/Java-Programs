@@ -1,0 +1,9 @@
+package org.unordered.list;
+
+public class MyException extends Exception {
+
+	public MyException(int pos) {
+		System.err.println("");
+	}
+	
+}

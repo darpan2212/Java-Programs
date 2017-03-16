@@ -1,0 +1,26 @@
+package org.dequeue.palindrome;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Dequeue {
+
+	static Deque<Integer> q = new ArrayDeque<Integer>();
+	static Deque<Integer> rq = new ArrayDeque<Integer>();
+
+	public static void main(String[] args) {
+		
+		q.add(6);
+		q.add(9);
+		q.addFirst(1);
+		q.add(2);
+		q.add(8);
+		q.add(3);
+		
+		q=rq;
+		
+		System.out.println(rq.pop()+"\t"+q.equals(rq));
+		
+	}
+	
+}

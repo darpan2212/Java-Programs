@@ -1,0 +1,15 @@
+package org.stack;
+
+import java.util.Scanner;
+
+public class BalancedParanthesis {
+
+	public static void main(String[] args) {
+		
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Enter the string which you want to check : ");
+		String str = scn.nextLine();
+		
+	}
+	
+}

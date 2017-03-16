@@ -100,7 +100,7 @@ public class LinkedList<T> {
 				if (temp.compareTo(e) == 0) {
 					ref.setNext(temp.getNext());
 					size--;
-					return;
+					break;
 				}
 				ref = temp;
 				temp = temp.getNext();
@@ -153,28 +153,29 @@ public class LinkedList<T> {
 		size--;
 		return temp.getValue();
 	}
-	
-	public T get(int i){
+
+	public T get(int i) {
 		Node<T> temp = head;
 		int cnt = 0;
-		while(!(cnt==i)){
+		while (!(cnt == i)) {
 			cnt++;
 			temp = temp.getNext();
 		}
 		return temp.getValue();
 	}
-	
+
 	public T popPos(int pos) {
 		Node<T> temp = head;
 		Node<T> ref = head;
 
-		if(pos==0){
+		if (pos == 0) {
 			head = ref.getNext();
 			size--;
+			return temp.getValue();
 		}
-		
-		while (pos>=0 && temp.getNext() != null) {
-			if(pos==0){
+
+		while (pos >= 0 && temp != null) {
+			if (pos == 0) {
 				ref.setNext(temp.getNext());
 				size--;
 				break;

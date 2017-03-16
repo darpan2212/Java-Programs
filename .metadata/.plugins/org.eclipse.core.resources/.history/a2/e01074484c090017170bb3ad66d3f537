@@ -1,0 +1,53 @@
+package org.ordered.list;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class FindInt {
+
+	public static SortedLinkedList<Integer> sl = new SortedLinkedList<Integer>();
+
+	public static void main(String[] args) {
+
+		File in = new File(
+				"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Basic Programs/src/org/ordered/list/input");
+		File out = new File(
+				"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Basic Programs/src/org/ordered/list/output");
+
+		FileReader fr = null;
+		FileWriter fw = null;
+
+		try {
+			if (in.canRead() && in.exists()) {
+				fr = new FileReader(in);
+				int i = fr.read();
+				String s = "";
+				while (i != -1) {
+					s += (char) i;
+					i = fr.read();
+				}
+				System.out.println(s);
+				/*
+				 * for (String num : s.split(" ")) {
+				 * sl.add(Integer.parseInt(num)); }
+				 */
+
+				String[] st  = s.split(" ");
+				for (String sr : s.split(" ")) {
+					sl.add(Integer.parseInt(sr));
+				}
+				System.out.println("actual\tsorted");
+				for (int j = 0; j < st.length; j++) {
+					System.out.println(st[j]+"\t"+sl.get(j));
+				}
+			}
+			
+			System.out.println("Which number you want to search in list ----- >>>>> ");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}

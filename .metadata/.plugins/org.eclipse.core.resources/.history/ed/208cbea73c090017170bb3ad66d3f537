@@ -1,0 +1,32 @@
+package org.unordered.list;
+
+public class LinkedListTest {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Integer> li = new LinkedList<Integer>();
+		li.add(1);
+		li.add(2);
+		li.add(3);
+		li.add(4);
+		li.add(5);
+		li.add(6);
+		li.add(7);
+		li.add(8);
+		
+		System.out.println("---------------------------------------------------");
+		li.insert(6, 2);
+		System.out.println("index of 3 :"+li.index(3)+"\n");
+		System.out.println("---------------------------------------------------");
+		li.traverse();
+		System.out.println("---------------------------------------------------");
+		System.out.println("size : "+li.size()+"\n");
+		System.out.println("---------------------------------------------------");
+		System.out.println("poped "+li.popPos(6));
+		System.out.println("---------------------------------------------------");
+		li.traverse();
+		System.out.println("---------------------------------------------------");
+		System.out.println("size : "+li.size()+"\n");
+	}
+	
+}

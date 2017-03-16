@@ -1,0 +1,33 @@
+package org.ordered.list;
+
+public class TestSortedList {
+
+	public static void main(String[] args) {
+
+		SortedLinkedList<Integer> si = new SortedLinkedList<Integer>();
+		si.add(25);
+		si.add(10);
+		si.add(26);
+		si.add(15);
+		si.add(20);
+		si.add(30);
+
+		System.out.println(si.get(5));
+		
+		si.remove(30);
+		
+		
+		System.out.println(si.get(5));
+		System.out.println("size-----------------"+si.size());
+		
+		si.remove(15);
+		System.out.println("After remove 15 size-----------------"+si.size());
+		si.traverse();
+		
+		si.remove(10);
+		System.out.println("After remove 10(head) size-----------------"+si.size());
+		si.traverse();
+		
+	}
+
+}

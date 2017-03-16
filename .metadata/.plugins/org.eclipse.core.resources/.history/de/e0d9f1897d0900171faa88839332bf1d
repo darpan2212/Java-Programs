@@ -1,0 +1,29 @@
+package org.dequeue.palindrome;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class Dequeue {
+
+	static Deque<Integer> q = new ArrayDeque<Integer>();
+	
+	public static void main(String[] args) {
+		
+		q.addFirst(1);
+		q.add(6);
+		q.add(9);
+		q.add(2);
+		q.add(8);
+		q.add(3);
+		
+		System.out.println(q.element());
+		System.out.println(q.peek());
+		System.out.println(q.poll());
+		System.out.println(q.remove(2));
+		System.out.println(q.peek());
+		System.out.println(q.element());
+	}
+	
+}

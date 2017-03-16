@@ -1,0 +1,30 @@
+package org.stack;
+
+import java.util.Scanner;
+
+public class BalancedParanthesis {
+
+	public static boolean balanceStrCheck(String str) {
+		
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Enter the string which you want to check  : ");
+		String str = scn.nextLine();
+		Stack st = new Stack();
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			switch(ch){
+			case '(':
+			case '{':
+			case '[':
+				st.push(ch);
+				break;
+			case ')':
+				if(st.isEmpty() || !st.pop().equals('(')){
+					
+				}
+			}
+		}
+		scn.close();
+	}
+	
+}

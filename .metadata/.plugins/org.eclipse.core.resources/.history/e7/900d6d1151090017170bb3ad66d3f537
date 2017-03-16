@@ -1,0 +1,15 @@
+package org.stack;
+
+
+public class StackTest {
+
+	public static void main(String[] args) {
+		
+		org.stack.Stack
+		
+		for (Object object : st) {
+			System.out.println(object);
+		}
+	}
+	
+}

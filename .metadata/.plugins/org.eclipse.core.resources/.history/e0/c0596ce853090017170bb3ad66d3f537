@@ -1,0 +1,54 @@
+package org.stack;
+
+import java.util.Arrays;
+
+public class Stack {
+
+	private static Object[] obj = new Object[5];
+	private int size = 0;
+	private int top = -1;
+	
+	public Stack() {
+	}
+
+	private static void increaseArraySize() {
+		obj = Arrays.copyOf(obj, obj.length * 2);
+	}
+
+	public boolean isEmpty() {
+		return top == -1;
+	}
+
+	public boolean isFull() {
+		return top == size-1;
+	}
+	
+	public int size() {
+		return size;
+	}
+
+	public void push(Object o) {
+		if (top < size) 
+			obj[++top] = o;
+		 else {
+			increaseArraySize();
+			obj[++size] = o;
+		}
+	}
+	
+	public Object pop(){
+		return obj[size--];
+	}
+	
+	public Object peek(){
+		return obj[size-1];
+	}
+	
+	public void traverse(){
+		
+		System.out.println("Obj length : "+obj.length);
+		for (int i = 0; i < obj.length; i++) {
+			System.out.println(obj[i]);
+		}
+	}
+}

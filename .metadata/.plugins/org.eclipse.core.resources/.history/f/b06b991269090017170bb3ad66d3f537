@@ -1,0 +1,11 @@
+package org.queue.banking;
+
+public class QueueTest {
+
+	Queue q = new Queue();
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}

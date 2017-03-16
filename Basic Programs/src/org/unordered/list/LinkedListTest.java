@@ -13,20 +13,9 @@ public class LinkedListTest {
 		li.add(6);
 		li.add(7);
 		li.add(8);
-		
-		System.out.println("---------------------------------------------------");
-		li.insert(6, 2);
-		System.out.println("index of 3 :"+li.index(3)+"\n");
-		System.out.println("---------------------------------------------------");
+
+		System.out.println("popped out ele : "+li.popPos(7));
 		li.traverse();
-		System.out.println("---------------------------------------------------");
-		System.out.println("size : "+li.size()+"\n");
-		System.out.println("---------------------------------------------------");
-		System.out.println("poped "+li.popPos(6));
-		System.out.println("---------------------------------------------------");
-		li.traverse();
-		System.out.println("---------------------------------------------------");
-		System.out.println("size : "+li.size()+"\n");
 	}
 	
 }
