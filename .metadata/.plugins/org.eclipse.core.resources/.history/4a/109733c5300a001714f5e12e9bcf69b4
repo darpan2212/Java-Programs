@@ -1,0 +1,11 @@
+package org.inventory;
+
+public class Inventory {
+
+	String name;
+	double weight, price;
+	
+	public static void main(String[] args) {
+
+	}
+}

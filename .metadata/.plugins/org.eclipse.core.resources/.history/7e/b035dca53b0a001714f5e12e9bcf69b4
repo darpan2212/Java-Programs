@@ -1,0 +1,30 @@
+package org.inventory;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class Inventory {
+
+	String name;
+	double weight, price;
+
+	public static void main(String[] args) throws IOException {
+
+		FileReader fr = null;
+
+		try {
+			fr = new FileReader(
+					"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Json Project/input.json");
+			int i = (char)fr.read();
+			while(i>-1)
+				System.out.println((char) fr.read());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}

@@ -1,0 +1,24 @@
+package org.jsontest;
+
+public class TestClass {
+
+	static String name;
+	static int age;
+	
+	public static void main(String[] args) {
+		
+		name = "Darpan";
+		age = 23;
+		
+		JSONObject obj = new JSONObject();
+		obj.put("name", name);
+		obj.put("age", 23);
+		
+		JSONArray objA = new JSONArray();
+		objA.put(obj);
+		
+		System.out.println(objA);
+		System.out.println(name);
+	}
+	
+}

@@ -1,0 +1,11 @@
+package org.vendingmachine;
+
+public class VendingMachine {
+
+	public static void main(String[] args) {
+		
+		int[] note = {1,2,5,10,20,50,100,500,1000};
+		
+	}
+	
+}

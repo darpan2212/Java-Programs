@@ -1,0 +1,58 @@
+package org.inventory;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class InventoryJson {
+
+	public static void main(String[] args) {
+		
+		JSONArray jarr = new JSONArray();
+		JSONObject jobj = new JSONObject();
+		Inventory i = new Inventory();
+		
+		i.setName("Basmati rice");
+		i.setWeight(5.2015);
+		i.setPrice(52.5);
+		
+		jobj.put("name", i.getName());
+		jobj.put("weight", i.getWeight());
+		jobj.put("price", i.getPrice());
+		jarr.add(jobj);
+		
+		i.setName("Wheat");
+		i.setWeight(6.321);
+		i.setPrice(42.502);
+		
+		jobj.put("name", i.getName());
+		jobj.put("weight", i.getWeight());
+		jobj.put("price", i.getPrice());
+		jarr.add(jobj);
+		
+		i.setName("Pulses");
+		i.setWeight(2.926);
+		i.setPrice(130.65);
+		
+		jobj.put("name", i.getName());
+		jobj.put("weight", i.getWeight());
+		jobj.put("price", i.getPrice());
+		jarr.add(jobj);
+		
+		System.out.println(jarr.toJSONString());
+		
+		try {
+			FileWriter fw = new FileWriter(
+					"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Json Project/input.json");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+}

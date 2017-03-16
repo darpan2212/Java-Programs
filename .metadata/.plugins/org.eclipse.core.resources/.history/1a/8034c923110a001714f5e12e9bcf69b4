@@ -1,0 +1,37 @@
+package org.hashing;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
+public class HashingClass {
+
+	public static void main(String[] args) {
+
+		Map<Integer, LinkedList<Integer>> map = new HashMap<Integer, LinkedList<Integer>>();
+
+		File in = new File(
+				"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Basic Programs/src/org/hashing/input");
+
+		FileReader fr = null;
+		
+		try {
+			fr = new FileReader(in);
+			int i = fr.read();
+			String s = "";
+			while (i != -1) {
+				s += (char) i;
+				i = fr.read();
+			}
+			System.out.println(s);
+			
+			String[] st = s.split(" ");
+			System.out.println(st[0].split(" ")[0]);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

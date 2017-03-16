@@ -1,0 +1,8 @@
+package org.inventory;
+
+public class Inventory {
+
+	String name;
+	double weight, price;
+	
+}

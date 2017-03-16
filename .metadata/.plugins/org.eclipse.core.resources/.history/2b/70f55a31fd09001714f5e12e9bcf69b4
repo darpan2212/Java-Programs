@@ -1,0 +1,9 @@
+package org.queue.banking;
+
+public class People {
+
+	private String name;
+	private double bal;
+	
+	
+}

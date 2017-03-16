@@ -1,0 +1,8 @@
+package org.jsontest;
+
+public class TestClass {
+
+	String name;
+	int age;
+	
+}

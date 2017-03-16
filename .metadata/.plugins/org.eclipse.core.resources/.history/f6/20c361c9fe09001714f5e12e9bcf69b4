@@ -1,0 +1,19 @@
+package org.queue.banking;
+
+public class People {
+
+	private String name;
+	private double bal;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getBal() {
+		return bal;
+	}
+	public void setBal(double bal) {
+		this.bal = bal;
+	}
+}

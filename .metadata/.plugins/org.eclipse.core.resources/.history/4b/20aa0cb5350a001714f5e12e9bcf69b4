@@ -1,0 +1,41 @@
+package org.jsontest;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class TestClass {
+
+	static String name;
+	static int age;
+	
+	public static void main(String[] args) {
+		
+		name = "Darpan";
+		age = 23;
+		
+		JSONObject obj = new JSONObject();
+		obj.put("name", name);
+		obj.put("age", 23);
+		
+		JSONArray objA = new JSONArray();
+		objA.add(obj);
+		
+		obj = new JSONObject();
+		obj.put("name", "shyam");
+		obj.put("age", 23);
+		objA.add(obj);
+
+		System.out.println(objA);
+		
+		getJson(objA);
+	}
+	
+	public static void getJson(JSONArray objA){
+		JSONObject obj = new JSONObject();
+		for (int i = 0; i < objA.size(); i++) {
+			obj = (JSONObject)objA.get(i);
+			System.out.println(obj.get("name"));
+			System.out.println(obj.get("age"));
+		}
+	}
+}

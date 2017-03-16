@@ -1,0 +1,16 @@
+package org.dequeue.palindrome;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Dequeue {
+
+	static Deque<Integer> q = new ArrayDeque<Integer>();
+	static Deque<Integer> rq = new ArrayDeque<Integer>();
+
+	public static void main(String[] args) {
+
+		String s = "Darpan";
+	}
+
+}

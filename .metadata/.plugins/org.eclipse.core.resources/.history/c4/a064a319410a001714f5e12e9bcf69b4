@@ -1,0 +1,14 @@
+package org.inventory;
+
+public class InventoryJson {
+
+	public static void main(String[] args) {
+		
+		Inventory i = new Inventory();
+		i.setName("Basmati rice");
+		i.setWeight(5.2015);
+		i.setPrice(52.5);
+		
+	}
+	
+}

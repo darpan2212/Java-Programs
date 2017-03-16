@@ -1,0 +1,28 @@
+package org.jsontest;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class TestClass {
+
+	static String name;
+	static int age;
+	
+	public static void main(String[] args) {
+		
+		name = "Darpan";
+		age = 23;
+		
+		JSONObject obj = new JSONObject();
+		obj.put("name", name);
+		obj.put("age", 23);
+		
+		JSONArray objA = new JSONArray();
+		objA.put(obj);
+		
+		obj = new JSONObject();
+		obj.put("name", "shyam");
+		System.out.println(objA);
+	}
+	
+}

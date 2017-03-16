@@ -1,0 +1,44 @@
+package org.inventory;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class InventoryJson {
+
+	public static void main(String[] args) {
+		
+		JSONArray jarr = new JSONArray();
+		JSONObject jobj = new JSONObject();
+		Inventory i = new Inventory();
+		
+		i.setName("Basmati rice");
+		i.setWeight(5.2015);
+		i.setPrice(52.5);
+		
+		jobj.put("name", i.getName());
+		jobj.put("weight", i.getWeight());
+		jobj.put("price", i.getPrice());
+		jarr.add(jobj);
+		
+		i.setName("Wheat");
+		i.setWeight(6.321);
+		i.setPrice(42.502);
+		
+		jobj.put("name", i.getName());
+		jobj.put("weight", i.getWeight());
+		jobj.put("price", i.getPrice());
+		jarr.add(jobj);
+		
+		i.setName("Pulses");
+		i.setWeight(2.926);
+		i.setPrice(130.654);
+		
+		jobj.put("name", i.getName());
+		jobj.put("weight", i.getWeight());
+		jobj.put("price", i.getPrice());
+		jarr.add(jobj);
+		
+		System.out.println(jarr.toJSONString());
+	}
+	
+}

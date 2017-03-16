@@ -1,0 +1,52 @@
+package org.hashing;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+
+public class HashingClass {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		Map<Integer, LinkedList<Integer>> map = new HashMap<Integer, LinkedList<Integer>>();
+		LinkedList<Integer> li;
+		File in = new File(
+				"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Basic Programs/src/org/hashing/input");
+
+		FileReader fr = null;
+		int slot;
+		try {
+			fr = new FileReader(in);
+			int i = fr.read();
+			String s = "";
+			while (i != -1) {
+				s += (char) i;
+				i = fr.read();
+			}
+			for (String st : s.split("\n" + "")) {
+				int num = Integer.parseInt(st);
+				slot = num % 11;
+				li = map.get(slot);
+				if (li == null) {
+					li = new LinkedList<Integer>();
+					map.put(slot, li);
+				}
+				li.add(num);
+			}
+			System.out.println(map.toString());
+			int search;
+			System.out.print("what number you want to find? : ");
+			search = scn.nextInt();
+
+			int key = search % 11;
+			li = map.get(key);
+			System.out.println(li.contains(search));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

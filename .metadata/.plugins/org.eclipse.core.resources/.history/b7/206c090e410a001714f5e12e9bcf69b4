@@ -1,0 +1,11 @@
+package org.inventory;
+
+public class InventoryJson {
+
+	public static void main(String[] args) {
+		
+		Inventory i = new Inventory();
+		
+	}
+	
+}

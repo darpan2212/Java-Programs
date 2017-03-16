@@ -1,0 +1,16 @@
+package org.jsontest;
+
+public class TestClass {
+
+	static String name;
+	static int age;
+	
+	public static void main(String[] args) {
+		
+		name = "Darpan";
+		age = 23;
+		
+		
+	}
+	
+}

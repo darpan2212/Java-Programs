@@ -1,0 +1,32 @@
+package org.dequeue.palindrome;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Dequeue {
+
+	static Deque<Character> q = new ArrayDeque<Character>();
+	static Deque<Character> rq = new ArrayDeque<Character>();
+
+	public static boolean isPalindrome(String s) {
+		
+		for (int i = 0; i < s.length(); i++) {
+			q.push(s.charAt(i));
+		}
+		for (int i = s.length() - 1; i >= 0; i--) {
+			rq.push(s.charAt(i));
+		}
+		
+		while(q!=null){
+			
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+
+		String s = "Darpan";
+
+	}
+
+}

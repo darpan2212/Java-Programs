@@ -1,0 +1,11 @@
+package org.queue.banking;
+
+public class BankingCashCounter {
+
+	public static Queue qu = new Queue();
+	
+	 public static boolean checkBal(){
+		 
+	 }
+	
+}

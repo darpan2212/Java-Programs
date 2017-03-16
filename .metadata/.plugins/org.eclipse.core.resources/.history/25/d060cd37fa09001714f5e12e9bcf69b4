@@ -1,0 +1,22 @@
+package org.queue.banking;
+
+import java.util.Scanner;
+
+public class BankingCashCounter {
+
+	public static Queue qu = new Queue();
+	
+	 public static boolean checkBal(){
+		 
+		 return true;
+	 }
+	
+	 public static void main(String[] args) {
+		
+		 Scanner scn = new Scanner(System.in);
+		 
+		 
+		 
+		 scn.close();
+	}
+}
