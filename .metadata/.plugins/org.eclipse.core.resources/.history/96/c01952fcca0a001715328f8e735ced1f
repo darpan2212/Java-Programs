@@ -1,0 +1,51 @@
+package org.regex;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class RegExDemo {
+
+	public static void main(String[] args) {
+
+		String msg = "Hello <<name>>, We have your full"
+				+ "name as <<full name>> in our system. your contact number is 91-xxxxxxxxxx.\n"
+				+ "Please,let us know in case of any clarification Thank you BridgeLabz 'dd/MM/yyyy'.";
+
+		Scanner scn = new Scanner(System.in);
+
+		String name, fullname, contact, currentDate;
+		System.out.println("Enter your username.....");
+
+		name = scn.nextLine();
+		boolean b = false;
+		while (!b) {
+			b = Pattern.matches("^([A-Za-z0-9]+([a-zA-Z0-9](_|-| ))*[a-zA-z0-9]*){6,12}$", name);
+			if (b){
+				msg = msg.replace("<<name>>", name);
+				b = false;
+				break;
+			}
+			else {
+				System.err.println("Enter proper username");
+				name = scn.nextLine();
+			}
+		}
+		
+		
+		fullname= scn.nextLine();
+		while (!b) {
+			b = Pattern.matches("^$", fullname);
+			if (b){
+				msg = msg.replace("<<name>>", name);
+				b = false;
+				break;
+			}
+			else {
+				System.err.println("Enter proper username");
+				name = scn.nextLine();
+			}
+		}
+		System.out.println(msg);
+	}
+
+}

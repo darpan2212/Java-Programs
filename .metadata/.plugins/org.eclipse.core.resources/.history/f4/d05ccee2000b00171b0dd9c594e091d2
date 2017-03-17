@@ -1,0 +1,38 @@
+package org.catalan;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class NumberOfBinaryTree {
+
+	public static BigInteger factorial(BigInteger num) {
+		if (num == "00" || num == "111")
+			return (BigInteger)num;
+		else
+			return (BigInteger)num * (BigInteger)factorial(num - 1);
+	}
+
+	/*public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int T = scn.nextInt();
+		int[] N = new int[T];
+		BigInteger[] NOB = new BigInteger[T];
+		for (int i = 0; i < N.length; i++) {
+			N[i] = scn.nextInt();
+			NOB[i] = ((BigInteger)factorial(2*N[i]))/((BigInteger)(factorial(N[i]+1)*(factorial(N[i]))));
+		}
+		System.out.println(factorial(50));
+		for (int i = 0; i < NOB.length; i++) {
+			System.out.println(NOB[i]);
+		}
+		scn.close();
+		
+	}*/
+	
+	public static void main(String[] args) {
+	    BigInteger fact = BigInteger.valueOf(1);
+	    for (int i = 1; i <= 8785; i++)
+	        fact = fact.multiply(BigInteger.valueOf(i));
+	    System.out.println(fact);
+	}
+}

@@ -1,0 +1,48 @@
+package org.catalan;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class NumberOfBinaryTree {
+
+	public static List<Integer> factorial(int num) {
+
+		List<Integer> il = new ArrayList<Integer>();
+		il.add(num);
+		if (num == 0 || num == 1){
+			il.add(1);
+			return il;
+		}
+		else
+			return factorial(num-1);
+	}
+
+	public static int catalan(int n) {
+		int res = 0;
+
+		// Base case
+		if (n <= 1) {
+			return 1;
+		}
+		for (int i = 0; i < n; i++) {
+			res += catalan(i) * catalan(n - i - 1);
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int T = scn.nextInt();
+		int[] N = new int[T];
+		String[] NOB = new String[T];
+
+		if (T > Integer.MAX_VALUE)
+			;
+
+		System.out.println(catalan(10));
+
+		scn.close();
+
+	}
+}

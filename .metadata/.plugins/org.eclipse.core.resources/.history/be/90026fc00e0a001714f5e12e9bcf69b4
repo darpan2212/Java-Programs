@@ -1,9 +1,0 @@
-package org.hashing;
-
-public class HashingClass {
-
-	public static void main(String[] args) {
-		
-	}
-	
-}

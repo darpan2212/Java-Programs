@@ -1,0 +1,11 @@
+package org.inventory;
+
+import org.json.simple.JSONArray;
+
+public class InventoryExtended {
+
+	public static JSONArray readJson(){
+		
+	}
+	
+}

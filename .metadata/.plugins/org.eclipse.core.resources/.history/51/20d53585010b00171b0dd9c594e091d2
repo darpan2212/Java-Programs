@@ -1,0 +1,30 @@
+package org.catalan;
+
+import java.util.Scanner;
+
+public class NumberOfBinaryTree {
+
+	public static int factorial(int num) {
+		if (num == 0 || num == 1)
+			return 1;
+		else
+			return num * factorial(num - 1);
+	}
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int T = scn.nextInt();
+		int[] N = new int[T];
+		int[] NOB = new int[T];
+		for (int i = 0; i < N.length; i++) {
+			N[i] = scn.nextInt();
+			NOB[i] = (factorial(2*N[i]))/((factorial(N[i]+1)*(factorial(N[i]))));
+		}
+		
+		for (int i = 0; i < NOB.length; i++) {
+			System.out.println(NOB[i]);
+		}
+		scn.close();
+		
+	}
+}

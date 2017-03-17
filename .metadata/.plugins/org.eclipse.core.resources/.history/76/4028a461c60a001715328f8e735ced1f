@@ -1,0 +1,20 @@
+package org.regex;
+
+import java.util.regex.Pattern;
+
+public class RegExDemo {
+
+	public static void main(String[] args) {
+
+		String msg = "Hello <<name>>, We have your full"
+				+ "name as <<full name>> in our system. your contact number is 91-xxxxxxxxxx.\n"
+				+ "Please,let us know in case of any clarification Thank you BridgeLabz 'dd/MM/yyyy'.";
+
+		msg = msg.replace("<<name>>", "Darpan");
+		
+		Pattern.compile("<<[a-zA-Z]*>>").matcher(msg).matches();
+		
+		System.out.println(msg);
+	}
+
+}

@@ -1,0 +1,73 @@
+package org.regex;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class RegExDemo {
+
+	public static void main(String[] args) {
+
+		String msg = "Hello <<name>>, We have your full"
+				+ "name as '<<full name>>' in our system. your contact number is 91-xxxxxxxxxx.\n"
+				+ "Please,let us know in case of any clarification Thank you BridgeLabz 'dd/MM/yyyy'.";
+
+		Scanner scn = new Scanner(System.in);
+
+		String name, fullname, contact, currentDate;
+		
+		System.out.println("Enter your username.....");
+		name = scn.nextLine();
+		boolean b = false;
+		while (!b) {
+			b = Pattern.matches("^([A-Za-z0-9]+([a-zA-Z0-9](_|-| ))*[a-zA-z0-9]*){6,12}$", name);
+			if (b){
+				msg = msg.replace("<<name>>", name);
+				b = false;
+				break;
+			}
+			else {
+				System.err.println("Enter proper username");
+				name = scn.nextLine();
+			}
+		}
+		
+		System.out.println("Enter full name");
+		fullname= scn.nextLine();
+		while (!b) {
+			b = Pattern.matches("^(([A-Z][a-z]{2,})( )*){2,3}$", fullname);
+			if (b){
+				msg = msg.replace("<<full name>>", fullname);
+				b = false;
+				break;
+			}
+			else {
+				System.err.println("Enter proper fullname (<Yourname Fathername Surname>)");
+				fullname = scn.nextLine();
+			}
+		}
+		System.out.println("Enter mobile number");
+		contact = scn.nextLine();
+		while (!b) {
+			b = Pattern.matches("^[789][0-9]{9}$", contact);
+			if (b){
+				msg = msg.replace("xxxxxxxxxx", contact);
+				b = false;
+				break;
+			}
+			else {
+				System.err.println("Enter proper Mobile number (10 digits only, no need to add 0 or +91)");
+				fullname = scn.nextLine();
+			}
+		}
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		currentDate = format.format(new Date().getTime());
+		System.out.println(currentDate+"\n\n");
+		msg = msg.replace("'dd/MM/yyyy'", currentDate);
+		
+		System.out.println(msg);
+	}
+
+}

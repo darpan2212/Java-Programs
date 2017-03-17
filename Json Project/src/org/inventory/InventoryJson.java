@@ -26,7 +26,7 @@ public class InventoryJson {
 		jobj.put("weight", i.getWeight());
 		jobj.put("price", i.getPrice());
 		jarr.add(jobj);
-        
+		
 		i = new Inventory();
 		i.setName("Wheat");
 		i.setWeight(6.321);
@@ -36,7 +36,7 @@ public class InventoryJson {
 		jobj.put("weight", i.getWeight());
 		jobj.put("price", i.getPrice());
 		jarr.add(jobj);
-		
+
 		i = new Inventory();
 		i.setName("Pulses");
 		i.setWeight(2.926);
@@ -53,7 +53,7 @@ public class InventoryJson {
 			FileWriter fw = new FileWriter(
 					"/home/bridgeit/Desktop/Darpan/Eclipse Workspace/Basic Programs/Json Project/input.json");
 			fw.write(jarr.toJSONString());
-			
+
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -67,20 +67,15 @@ public class InventoryJson {
 			JSONArray objArr = (JSONArray) parser.parse(fr);
 			JSONObject obj;
 			for (int j = 0; j < objArr.size(); j++) {
-				obj = (JSONObject)objArr.get(j);
+				obj = (JSONObject) objArr.get(j);
 				System.out.println(obj.toJSONString());
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
 	}
-
 }

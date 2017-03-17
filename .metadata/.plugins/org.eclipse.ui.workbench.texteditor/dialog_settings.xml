@@ -2,18 +2,25 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rq" key="selection"/>
+		<item value="jobj" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="q"/>
-			<item value="compareTo"/>
-			<item value="Node"/>
-			<item value="getElapsedTimeSecs"/>
+			<item value="ji"/>
+			<item value="scann"/>
+			<item value=" "/>
+			<item value="&#x09;"/>
+			<item value="Stringr"/>
+			<item value="Intege"/>
+			<item value="bankCash"/>
+			<item value="getsize"/>
 		</list>
 		<list key="replacehistory">
+			<item value="jobj"/>
+			<item value=""/>
+			<item value=" "/>
 			<item value="rq"/>
 			<item value="Node&lt;T&gt;"/>
 			<item value="getElapsedTime"/>
