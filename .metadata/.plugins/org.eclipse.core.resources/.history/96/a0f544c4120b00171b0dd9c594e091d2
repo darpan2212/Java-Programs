@@ -41,5 +41,6 @@ public class NumberOfBinaryTree {
 		for (int i = 0; i < NOB.length; i++) {
 			System.out.println(NOB[i]);
 		}
+
 	}
 }

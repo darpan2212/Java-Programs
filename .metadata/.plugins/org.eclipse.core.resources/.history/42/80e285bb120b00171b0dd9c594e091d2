@@ -38,8 +38,8 @@ public class NumberOfBinaryTree {
 			N[i] = scn.nextInt();
 			NOB[i] = catalan(N[i]);
 		}
-		for (int i = 0; i < NOB.length; i++) {
-			System.out.println(NOB[i]);
-		}
+		
+		System.out.println(catalan(100));
+
 	}
 }
