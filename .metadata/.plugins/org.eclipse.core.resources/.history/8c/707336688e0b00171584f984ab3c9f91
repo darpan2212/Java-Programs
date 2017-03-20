@@ -1,0 +1,7 @@
+package org.model;
+
+public class Doctor {
+
+	String Name, Id, Specialization, Availability;
+	
+}

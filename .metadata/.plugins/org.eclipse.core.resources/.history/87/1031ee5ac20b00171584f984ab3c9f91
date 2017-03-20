@@ -1,0 +1,32 @@
+package org.tester;
+
+import org.controller.DoctorController;
+import org.model.Doctor;
+
+public class TesterClass {
+
+	public static DoctorController dc = new DoctorController();
+	public static void main(String[] args) {
+
+		Doctor doc = new Doctor();
+		doc.setId("101");
+		doc.setName("Dr. Mathur");
+		doc.setSpecialization("Heart specialist");
+		doc.setAvailability("7:30AM to 11:30AM");
+		dc.addDoc(doc);
+		
+		Doctor doc2 = new Doctor();
+		doc2.setId("102");
+		doc2.setName("Dr. Peter");
+		doc2.setSpecialization("Cardio");
+		doc2.setAvailability("11:30AM to 3:30PM");
+		dc.adddoc2(doc2);
+		
+		System.out.println(dc.getDocObj(0).toString());
+		Doctor d = dc.getDocObj(0);
+		System.out.println(d.getName());
+		dc.printDocList();
+		
+	}
+
+}

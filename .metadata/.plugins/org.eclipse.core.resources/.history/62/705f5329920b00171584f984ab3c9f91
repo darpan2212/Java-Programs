@@ -1,0 +1,11 @@
+package org.dao.json;
+
+import org.json.simple.JSONObject;
+
+public class JsonClass {
+
+	public JSONObject getJsonObj(Object obj){
+		
+	}
+	
+}

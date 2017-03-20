@@ -1,0 +1,46 @@
+package org.tester;
+
+import java.util.List;
+
+import org.controller.DoctorController;
+import org.model.Doctor;
+
+public class PatientTesterClass {
+
+	public static DoctorController dc = new DoctorController();
+
+	public static void main(String[] args) {
+
+		Doctor doc = new Doctor();
+		doc.setId("101");
+		doc.setName("Dr. Mathur");
+		doc.setSpecialization("Heart specialist");
+		doc.setAvailability("7:30AM to 11:30AM");
+		dc.addDoc(doc);
+
+		Doctor doc2 = new Doctor();
+		doc2.setId("102");
+		doc2.setName("Dr. Peter");
+		doc2.setSpecialization("Cardio");
+		doc2.setAvailability("11:30AM to 3:30PM");
+		dc.addDoc(doc2);
+
+		Doctor doc3 = new Doctor();
+		doc3.setId("103");
+		doc3.setName("Dr. Gokul");
+		doc3.setSpecialization("Android");
+		doc3.setAvailability("11:30AM to 3:30PM");
+		dc.addDoc(doc3);
+
+		System.out.println(dc.getDocObj(1).toString());
+		Doctor d = dc.getDocObj(2);
+		System.out.println(d.getName());
+		dc.printDocList();
+
+		List<Doctor> docLi = dc.getDocList();
+		for (Doctor doctor : docLi) {
+			System.out.println(doctor.getId());
+		}
+	}
+
+}

@@ -1,0 +1,26 @@
+package org.dao.json;
+
+import java.util.Map;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class JsonClass {
+
+	JSONArray jsonArr = new JSONArray();
+	
+	public JSONObject getJsonObj(Map<String, Object> map){
+		JSONObject jobj = new JSONObject();
+		jobj.putAll(map);
+		return jobj;
+	}
+	
+	public Object getObject(String key, JSONObject jobj){
+		Object obj = jobj.get(key);
+		return obj;
+	}
+	
+	public void addToJsonArr(JSONObject jobj){
+		jsonArr.add(jobj);
+	}
+}
